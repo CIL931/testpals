@@ -1,12 +1,12 @@
 [[ GLOBAL ]]
-kiosk_config=http://192.168.1.99/KIOSK/kiosk-config.txt
+kiosk_config=https://cil931.github.io/testpals/kiosk-config.txt
 primary_keyboard_layout=fr
 connection=wired
 #dhcp=yes
 browser=firefox
 #virtual_keyboard=yes
 enable_file_protocol=yes
-homepage=https://drive.google.com/file/d/1arqoVFYd0FvktHPxVlwRgY4ATVPAIQFJ/view?usp=share_link
+homepage=https://cil931.github.io/testpals/html/LIBRE-SERVICE.html
 paper_size=A4
 wallpaper=https://upload.wikimedia.org/wikipedia/commons/b/b1/Logo_cpam93.jpg
 removable_devices=no
