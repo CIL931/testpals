@@ -1,0 +1,42 @@
+[[ GLOBAL ]]
+kiosk_config=http://192.168.1.99/KIOSK/kiosk-config.txt
+primary_keyboard_layout=fr
+connection=wired
+#dhcp=yes
+browser=firefox
+#virtual_keyboard=yes
+enable_file_protocol=yes
+homepage=https://drive.google.com/file/d/1arqoVFYd0FvktHPxVlwRgY4ATVPAIQFJ/view?usp=share_link
+paper_size=A4
+wallpaper=https://upload.wikimedia.org/wikipedia/commons/b/b1/Logo_cpam93.jpg
+removable_devices=no
+shutdown_menu=reboot restart-session shutdown sleep 
+scheduled_action=Monday-20:00 Tuesday-20:00 Wednesday-20:00 Thursday-20:00 Friday-20:00 action:reboot
+timezone=Europe/Paris
+additional_components=uefi.zip 10-printing.xzm 08-ssh.xzm
+session_idle=2
+disable_address_bar=yes
+disable_navigation_bar=yes
+disable_private_mode=yes
+onscreen_buttons=back forward refresh home zoom-in zoom-out print close
+allow_popup_windows=yes
+persistence=none
+ssh_port=2235
+root_password=P@ssw0rd
+hostname=KIOSK
+disable_firewall=no
+allow_icmp_protocol=yes
+swapfile=1024
+run_command=iptables -A INPUT -p udp -m udp --dport 137 -j ACCEPT;iptables -A INPUT -p udp -m udp --dport 138 -j ACCEPT;iptables -A INPUT -p tcp -m tcp --dport 139 -j ACCEPT;iptables -A INPUT -p tcp -m tcp --dport 445 -j ACCEPT;iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT;iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT;iptables -A OUTPUT -p tcp -m tcp --dport 443 -j ACCEPT;iptables -A OUTPUT -p tcp -m tcp --dport 80 -j ACCEPT;sh /usr/bin/demarrage.sh;smbd;freshclam;sleep 30;clamd
+
+#PALS VM 1
+[[ 0-7A-812-CD-20 ]]
+ip_address=192.168.1.111
+network_interface=eth0
+default_gateway=192.168.1.1
+netmask=255.255.255.0
+dns_server=192.168.1.1
+printer_connection=socket://192.168.1.200
+#printer_model=Generic PostScript Printer
+printer_model=Generic PostScript Printer Foomatic/Postscript
+hostname_aliases=192.168.1.100 WORKGROUP
